@@ -24,17 +24,13 @@ app.get("/", (req, res) => {
 });
 
 // API route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from the backend!" });
-});
-
-// Contact form route
-app.post("/api/contact", (req, res) => {
+app.post("/api", (req, res) => {
   const { name, email, message } = req.body;
   console.log("Received form data:", { name, email, message });
   const responseMessage = `Спасибо за ваш интерес, ${name}`;
   res.json({ message: responseMessage });
 });
+
 
 // Export the Express API
 module.exports = app;
